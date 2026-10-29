@@ -1,0 +1,52 @@
+```text
+Algorithm Sum_Distinct_Elements
+
+Const
+    N = 4
+    M = 5
+
+Var
+    T1 : Array[1..N] of Integer
+    T2 : Array[1..M] of Integer
+    i, j, Sum : Integer
+    Found : Boolean
+
+Begin
+
+    T1 ← [3, 1, 7, 9]
+    T2 ← [2, 4, 1, 9, 3]
+
+    Sum ← 0
+
+    For i ← 1 to N do
+        Found ← False
+
+        For j ← 1 to M do
+            If T1[i] = T2[j] then
+                Found ← True
+            EndIf
+        EndFor
+
+        If Found = False then
+            Sum ← Sum + T1[i]
+        EndIf
+    EndFor
+
+    For i ← 1 to M do
+        Found ← False
+
+        For j ← 1 to N do
+            If T2[i] = T1[j] then
+                Found ← True
+            EndIf
+        EndFor
+
+        If Found = False then
+            Sum ← Sum + T2[i]
+        EndIf
+    EndFor
+
+    Write("Sum of distinct elements = ", Sum)
+
+End
+```

@@ -1,0 +1,59 @@
+```text
+Function dot_product(
+    v1 : Array of Real,
+    v2 : Array of Real,
+    n : Integer
+) : Real
+
+Var
+    i : Integer
+    ps : Real
+
+Begin
+    ps ← 0
+
+    For i ← 1 to n do
+        ps ← ps + v1[i] * v2[i]
+    EndFor
+
+    Return ps
+End
+
+
+Algorithm Check_Orthogonality_Function
+
+Var
+    V1, V2 : Array[1..100] of Real
+    N, P, D, J : Integer
+    PS : Real
+
+Begin
+    Write("Enter the number of pairs:")
+    Read(N)
+
+    For P ← 1 to N do
+
+        Write("Enter the dimension of the vectors:")
+        Read(D)
+
+        For J ← 1 to D do
+            Write("Enter V1[", J, "]:")
+            Read(V1[J])
+        EndFor
+
+        For J ← 1 to D do
+            Write("Enter V2[", J, "]:")
+            Read(V2[J])
+        EndFor
+
+        PS ← dot_product(V1, V2, D)
+
+        If PS = 0 then
+            Write("The vectors are orthogonal.")
+        Else
+            Write("The vectors are not orthogonal.")
+        EndIf
+
+    EndFor
+End
+```
